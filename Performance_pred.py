@@ -31,7 +31,8 @@ def main():
     attendance = st.slider('On a scale of O - 10, please rate your attendance to Real Analysis 1 tutorials so far', min_value = 0, max_value = 10, step = 1)
     survey_data.append(attendance)
     
-    age = st.number_input('Age')
+    
+    age = st.number_input('Age', min_value=16, max_value=70, value = 16)
     survey_data.append(age)
 
     # Predict button
@@ -40,9 +41,9 @@ def main():
     if predict:
         prediction = model.predict([survey_data])
         if prediction == 1:
-            st.success('You will PASS. Keep up the momentum!')
+            st.success('You will PASS. Keep up the momentum!\n\nModel: Random Forest (Prediction Accuracy: 96%)')
         else:
-            st.error("You will FAIL if you don't sit up")
+            st.error("You will FAIL if you don't sit up\n\nModel: Random Forest (Prediction Accuracy: 96%)")
     
 
     
