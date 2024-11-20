@@ -1,7 +1,7 @@
 import pickle
 import streamlit as st 
 
-file = open('https://github.com/Mannienox/Students-Performance-Prediction-using-ML/blob/main/model.pkl', 'rb')
+file = open('model.pkl', 'rb')
 model = pickle.load(file)
 
 survey_data = []
